@@ -1,260 +1,339 @@
-body {
-    background: #1a1a1a;
-    font-family: "Cinzel", serif;
+:root {
+    --parchment-light: #fdfaf3;
+    --parchment-dark: #e8dccb;
+    --text-dark: #2c1b0f;
+    --border-color: #3a2f1b;
 }
 
-/* PAGE */
+body {
+    background: #121212;
+    font-family: "Cinzel", serif;
+    margin: 0;
+    padding: 20px;
+    color: var(--text-dark);
+}
+
+/* MENU DE FILTROS */
+.filters {
+    width: 100%;
+    margin: 0 auto 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filters select {
+    padding: 10px 15px;
+    font-family: "Cinzel", serif;
+    font-weight: bold;
+    background: linear-gradient(145deg, #2c1b0f, #1a1009);
+    color: #e8dccb;
+    border: 2px solid #6b5a3a;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    transition: border-color 0.2s;
+}
+
+.filters select:hover {
+    border-color: #d4af37;
+}
+
+/* TÍTULO DA CLASSE */
+.class-title {
+    width: 100%;
+    font-family: "Uncial Antiqua", cursive;
+    font-size: 32px;
+    color: #d4af37;
+    margin: 40px 0 20px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(to right, transparent, #6b5a3a, transparent) 1;
+    padding-bottom: 10px;
+}
+
+/* LAYOUT DA PÁGINA */
 .page {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* CARD BASE */
-.card {
-    width: 7cm;
-    height: 10cm;
-    margin: 8px;
-    padding: 10px;
-    box-sizing: border-box;
-
-    border-radius: 14px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-
-    background: linear-gradient(145deg, #f8f5ec, #e8dccb);
-    border: 2px solid #3a2f1b;
-
-    box-shadow:
-        0 4px 10px rgba(0, 0, 0, 0.6),
-        inset 0 0 10px rgba(0, 0, 0, 0.2);
-
-    overflow: hidden;
-}
-
-/* ORNAMENTO INTERNO */
-.card::before {
-    content: "";
-    position: absolute;
-    inset: 4px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    pointer-events: none;
-}
-
-/* HEADER */
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 4px;
-}
-
-/* ÍCONE */
-.icon {
-    font-size: 20px;
-    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
-}
-
-/* TÍTULO */
-.title {
-    font-family: "Uncial Antiqua", cursive;
-    font-size: 15px;
-    text-align: right;
-    letter-spacing: 1px;
-    color: #2c1b0f;
-}
-
-/* SUBTITLE */
-.subtitle {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-    color: #5a4632;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    padding-bottom: 2px;
-}
-
-/* INFO */
-.info {
-    font-size: 9px;
-    margin-bottom: 6px;
-    padding-bottom: 4px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    font-family: "Georgia", serif;
-}
-
-/* DESCRIPTION */
-.description {
-    font-size: 9px;
-    line-height: 1.25;
-    text-align: justify;
-    flex-grow: 1;
-    font-family: "Georgia", serif;
-}
-
-/* CLASSE TÍTULO */
-.class-title {
-    width: 100%;
-    font-family: "Uncial Antiqua", cursive;
-    font-size: 26px;
-    color: #e8dccb;
-    margin: 30px 0 10px;
-    text-align: center;
-    border-bottom: 2px solid #6b5a3a;
-    padding-bottom: 6px;
-}
-
-/* SEÇÃO */
 .class-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-/* 🎨 CORES POR ESCOLA (COM MAIS PROFUNDIDADE) */
-
-.evocation {
-    border-color: #922b21;
-    background: linear-gradient(145deg, #fcebea, #f5b7b1);
-}
-
-.necromancy {
-    border-color: #4a235a;
-    background: linear-gradient(145deg, #f4ecf7, #d7bde2);
-}
-
-.abjuration {
-    border-color: #1f618d;
-    background: linear-gradient(145deg, #eaf2f8, #aed6f1);
-}
-
-.conjuration {
-    border-color: #196f3d;
-    background: linear-gradient(145deg, #eafaf1, #a9dfbf);
-}
-
-.illusion {
-    border-color: #a93226;
-    background: linear-gradient(145deg, #fdecea, #f5b7b1);
-}
-
-.transmutation {
-    border-color: #b7950b;
-    background: linear-gradient(145deg, #fef9e7, #f9e79f);
-}
-
-.enchantment {
-    border-color: #7d3c98;
-    background: linear-gradient(145deg, #f5eef8, #d2b4de);
-}
-
-.divination {
-    border-color: #9a7d0a;
-    background: linear-gradient(145deg, #fcf3cf, #f7dc6f);
-}
-
-/* ✨ EFEITO HOVER (útil antes de imprimir) */
-.card:hover {
-    transform: scale(1.03);
-    transition: 0.2s;
-}
-
-.filters {
+    gap: 15px;
     width: 100%;
-    margin: 10px;
-    text-align: center;
 }
 
-.filters select {
-    padding: 6px;
-    margin: 4px;
-    font-family: "Cinzel", serif;
-    background: #e8dccb;
-    border: 1px solid #3a2f1b;
+/* DESIGN DO CARD */
+.card {
+    width: 7cm;
+    height: 10cm; /* Altura estritamente fixa */
+    padding: 14px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    background: linear-gradient(
+        135deg,
+        var(--parchment-light),
+        var(--parchment-dark)
+    );
+    border: 3px solid var(--border-color);
+    box-shadow:
+        0 8px 16px rgba(0, 0, 0, 0.6),
+        inset 0 0 40px rgba(107, 90, 58, 0.15);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    overflow: hidden; /* Esconde qualquer texto que tente esticar o card */
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);
+}
+
+/* ORNAMENTO INTERNO (Borda dupla) */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 1px solid rgba(44, 27, 15, 0.4);
+    border-radius: 6px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* HEADER DO CARD */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--text-dark);
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 2;
+}
+
+.icon {
+    font-size: 24px;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.title {
+    font-family: "Uncial Antiqua", cursive;
+    font-size: 16px;
+    text-align: right;
+    line-height: 1.1;
+    color: #1a0f08;
+}
+
+/* SUBTÍTULO (Nível e Escola) */
+.subtitle {
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: #5a4632;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* GRID DE INFORMAÇÕES TÉCNICAS */
+.info {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px 8px;
+    font-size: 10px;
+    font-family: "Lora", serif;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px dotted var(--border-color);
+    position: relative;
+    z-index: 2;
+}
+
+.info b {
+    color: #4a3320;
+}
+
+/* DESCRIÇÃO DA MAGIA */
+.description {
+    font-size: 10.5px;
+    line-height: 1.35;
+    text-align: justify;
+    flex-grow: 1;
+    font-family: "Lora", serif;
+    overflow-y: auto;
+    padding-right: 4px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Personalização da barra de rolagem interna do card */
+.description::-webkit-scrollbar {
+    width: 4px;
+}
+.description::-webkit-scrollbar-thumb {
+    background: #8b7355;
+    border-radius: 4px;
+}
+
+/* 🎨 CORES POR ESCOLA */
+.card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.Evocação {
+    border-top-color: #b03a2e;
+}
+.Evocação::after {
+    background: linear-gradient(to bottom, #b03a2e, transparent);
+}
+
+.Necromancia {
+    border-top-color: #6c3483;
+}
+.Necromancia::after {
+    background: linear-gradient(to bottom, #6c3483, transparent);
+}
+
+.Abjuração {
+    border-top-color: #2874a6;
+}
+.Abjuração::after {
+    background: linear-gradient(to bottom, #2874a6, transparent);
+}
+
+.Conjuração {
+    border-top-color: #239b56;
+}
+.Conjuração::after {
+    background: linear-gradient(to bottom, #239b56, transparent);
+}
+
+.Ilusão {
+    border-top-color: #b9770e;
+}
+.Ilusão::after {
+    background: linear-gradient(to bottom, #b9770e, transparent);
+}
+
+.Transmutação {
+    border-top-color: #d4ac0d;
+}
+.Transmutação::after {
+    background: linear-gradient(to bottom, #d4ac0d, transparent);
+}
+
+.Encantamento {
+    border-top-color: #cb4335;
+}
+.Encantamento::after {
+    background: linear-gradient(to bottom, #cb4335, transparent);
+}
+
+.Adivinhação {
+    border-top-color: #839192;
+}
+.Adivinhação::after {
+    background: linear-gradient(to bottom, #839192, transparent);
 }
 
 /* 🖨 IMPRESSÃO */
 @media print {
     body {
         background: white;
+        padding: 0;
     }
-
+    .filters,
+    .class-title {
+        display: none;
+    }
+    .page {
+        display: block;
+    }
+    .class-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 2mm;
+    }
     .card {
         box-shadow: none;
-        margin: 4px;
+        margin: 0;
+        border-radius: 0;
+        border: 1px solid #ccc;
+        page-break-inside: avoid;
+        padding: 8px; /* Reduz muito as margens internas */
     }
-
+    .card::before {
+        inset: 3px;
+    }
     .card:hover {
         transform: none;
     }
-}
-@page {
-    size: A4;
-    margin: 5mm;
+
+    /* Redução drástica para caber o texto */
+    .header {
+        margin-bottom: 4px;
+        padding-bottom: 2px;
+    }
+    .icon {
+        font-size: 18px; /* Ícone menor */
+    }
+    .title {
+        font-size: 14px; /* Título menor */
+    }
+    .subtitle {
+        font-size: 9px;
+        margin-bottom: 4px;
+    }
+    .info {
+        font-size: 8px;
+        margin-bottom: 4px;
+        padding-bottom: 2px;
+        gap: 2px 4px;
+    }
+    .description {
+        font-size: 8.5px; /* Fonte pequena, mas ainda legível de perto */
+        line-height: 1.15; /* Linhas mais coladas */
+        letter-spacing: -0.1px; /* Junta levemente as letras */
+    }
 }
 
 @media (max-width: 768px) {
-    body {
-        background: #111;
-    }
-
-    .page {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .card {
-        width: 90%;
+        width: 100%;
+        max-width: 350px;
         height: auto;
-        min-height: 320px;
-        padding: 14px;
-        margin: 10px 0;
-        transition: transform 0.15s ease;
-        border-radius: 16px;
+        min-height: 400px;
     }
-
-    .card:active {
-        transform: scale(0.98);
-    }
-    .title {
-        font-size: 18px;
-        text-align: left;
-    }
-
-    .subtitle {
-        font-size: 12px;
-    }
-
-    .info {
-        font-size: 11px;
-    }
-
-    .description {
-        font-size: 12px;
-        line-height: 1.4;
-    }
-
-    .icon {
-        font-size: 22px;
-    }
-
-    .header {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .class-title {
-        font-size: 22px;
-        text-align: center;
-    }
-
     .filters select {
-        width: 90%;
-        margin: 6px 0;
-        font-size: 14px;
+        width: 100%;
     }
 }
