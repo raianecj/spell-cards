@@ -264,6 +264,50 @@ body {
     background: linear-gradient(to bottom, #839192, transparent);
 }
 
+/* Estilo unificado para a barra de pesquisa e selects */
+.filters select,
+.filters input[type="text"] {
+    padding: 10px 15px;
+    font-family: "Cinzel", serif;
+    font-weight: bold;
+    background: linear-gradient(145deg, #2c1b0f, #1a1009);
+    color: #e8dccb;
+    border: 2px solid #6b5a3a;
+    border-radius: 6px;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    transition: border-color 0.2s;
+}
+
+.filters select {
+    cursor: pointer;
+}
+
+.filters input[type="text"] {
+    width: 200px; /* Dá um tamanho inicial agradável para a barra */
+}
+
+/* Cor do texto de fundo da barra de pesquisa */
+.filters input[type="text"]::placeholder {
+    color: #8b7355;
+    opacity: 0.8;
+}
+
+.filters select:hover,
+.filters input[type="text"]:hover,
+.filters input[type="text"]:focus {
+    border-color: #d4af37;
+}
+
+/* Ajuste no mobile para a barra ocupar 100% da tela */
+@media (max-width: 768px) {
+    .filters select,
+    .filters input[type="text"] {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
 /* 🖨 IMPRESSÃO */
 @media print {
     body {
